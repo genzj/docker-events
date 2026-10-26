@@ -53,7 +53,7 @@ service() {
     
     # In case docker was stopped we will continue to try read it events in endless loop
     while true; do
-        docker events --filter type=container --filter event=start --format '{{.Status}}.{{.Actor.Attributes.name}}' --since=15s | while read name; do
+        docker events --filter type=container --filter event=start --format '{{.Action}}.{{.Actor.Attributes.name}}' --since=15s | while read name; do
 
             echo Event has been catched: $name
 
