@@ -58,7 +58,7 @@ service() {
             echo Event has been catched: $name
 
             # check for container labels fist
-            coname=$(echo $name | cut -d. -f2)
+            coname=$(echo "$name" | cut -d. -f2-)
             
             # skip ourself events
             [[ "$coname" == "$selfconame" ]] && continue
